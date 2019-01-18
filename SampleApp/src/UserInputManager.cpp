@@ -133,9 +133,10 @@ SampleAppReturnCode UserInputManager::run() {
     m_interactionManager->begin();
     while (true) {
         char x;
+        //HEADLESS
         if (!readConsoleInput(&x)) {
             break;
-        }
+        }//END HEADLESS
         x = ::tolower(x);
         if (x == QUIT) {
             break;
