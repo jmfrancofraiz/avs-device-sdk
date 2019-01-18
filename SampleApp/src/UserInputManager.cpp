@@ -132,11 +132,13 @@ SampleAppReturnCode UserInputManager::run() {
     bool userTriggeredLogout = false;
     m_interactionManager->begin();
     while (true) {
-        char x;
         //HEADLESS
+        std::this_thread::sleep_for(std::chrono::hours(1));continue;
+        //HEADLESS
+        char x;
         if (!readConsoleInput(&x)) {
             break;
-        }//END HEADLESS
+        }
         x = ::tolower(x);
         if (x == QUIT) {
             break;
